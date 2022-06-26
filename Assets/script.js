@@ -2,12 +2,17 @@
 var wins = 0;
 var losses = 0;
 var ties = 0;
-
+var rock = "R" || "r"
+var paper = "P" || "p"
+var scissors = "S" || "s"
+var choice = [rock, paper, scissors]
 
     //userinput enter and click
     //save user input in a variable and make sure to convert it into upper case
-
-
+function RPS() {
+    prompt("Rock, Paper, Scissors", "R, P, or S")
+    
+}
 
 //ai pick 
     //create array = ["R", "S", "P"]
