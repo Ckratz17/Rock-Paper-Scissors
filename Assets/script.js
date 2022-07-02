@@ -7,6 +7,10 @@ var paper = "P" || "p"
 var scissors = "S" || "s"
 
 
+
+
+RPS()
+Results()
     //userinput enter and click
     //save user input in a variable and make sure to convert it into upper case
 function RPS() {
@@ -14,30 +18,42 @@ function RPS() {
     var aiPick = " "
     var pick = ""
     var user = prompt("Rock, Paper, Scissors", "R, P, or S")
-    for(var i = 0; i < 1; i++) {
-        aiPick += Math.floor(Math.random() * 3);
+    
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
       
+    if (randomNumber === 1) {
+        aiPick = rock
     }
-       
-    if(user === rock && aiPick === paper || 
-        user === paper && aiPick === scissors || 
-        user === scissors && aiPick === rock) {
-        alert("You lose! Your opponent choose " + choice)
+    if (randomNumber === 2) {
+        aiPick = paper
     }
-
-    if(user === rock && aiPick === scissors || 
-        user === paper && aiPick === rock || 
-        user === scissors && aiPick === paper) {
-        alert("You win! Your opponent choose " + choice)
+    if (randomNumber === 3) {
+        aiPick = scissors
     }
-
-    if(user === rock && aiPick === rock || 
-        user === paper && aiPick === paper || 
-        user === scissors && aiPick === scissors) {
-        alert("You tie! Your opponent choose " + choice)
-    }
+       console.log(aiPick)
 }
 
+function Results() {
+    pick = rock || paper || scissors
+    aiPick = rock || paper || scissors
+    if(pick === rock && aiPick === paper || 
+        pick === paper && aiPick === scissors || 
+        pick === scissors && aiPick === rock) {
+        alert("You lose! Your opponent choose " + aiPick)
+    }
+
+    if(pick === rock && aiPick === scissors || 
+        pick === paper && aiPick === rock || 
+        pick === scissors && aiPick === paper) {
+        alert("You win! Your opponent choose " + aiPick)
+    }
+
+    if(pick === rock && aiPick === rock || 
+        pick === paper && aiPick === paper || 
+        pick === scissors && aiPick === scissors) {
+        alert("You tie! Your opponent choose " + aiPick)
+    }
+}
 
 //ai pick 
     //create array = ["R", "S", "P"]
